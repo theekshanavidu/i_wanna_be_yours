@@ -26,6 +26,46 @@
   <!-- Ambient Falling Petals Canvas (for Box 1 Flower Screen) -->
   <canvas id="petals-canvas"></canvas>
 
+  <!-- ====================================================================
+       MOBILE SCREEN DETECTION NOTICE (Only for Mobile Phones)
+       Prompts the user to open the URL on Desktop, Laptop, or Tablet
+       ==================================================================== -->
+  <div id="mobile-device-notice" class="mobile-device-overlay" style="display: none;">
+    <div class="mobile-device-card">
+      <div class="mobile-card-badge">🐾 Princess Surprise 💖</div>
+      
+      <!-- Cute Cat Illustration -->
+      <div class="mobile-cats-illustration">
+        <img src="assets/images/cat-couple-main.svg" alt="Cute Cats">
+      </div>
+
+      <h2 class="mobile-card-title">Open URL on Desktop Or Laptop Or Tablet 💻✨</h2>
+      
+      <p class="mobile-card-sinhala">
+        මේ ආදරණීය surprise එකේ තියෙන ලස්සන animations, සින්දු සහ mystery gifts උපරිම ලස්සනට අත්විඳින්න කරුණාකර ඔයාගේ <strong>Desktop, Laptop හෝ Tablet</strong> එකෙන් මේ link එක open කරන්න 🥰🐾
+      </p>
+
+      <p class="mobile-card-english">
+        This magical experience is crafted with romantic music and animations for a bigger screen! Please open on your desktop, laptop, or tablet. 💖
+      </p>
+
+      <!-- URL Display & Quick Copy Button -->
+      <div class="mobile-url-box">
+        <input type="text" id="mobile-copy-url" readonly value="">
+        <button id="btn-mobile-copy" class="btn-copy-url">
+          <span id="copy-icon">📋</span>
+          <span id="copy-text">Copy Link</span>
+        </button>
+      </div>
+      <div id="copy-toast" class="copy-toast">Link copied! Send it to your laptop 💕</div>
+
+      <!-- Option to continue on mobile if she really wants to -->
+      <button id="btn-mobile-continue" class="btn-mobile-bypass">
+        Preview on Mobile Anyway 🌸
+      </button>
+    </div>
+  </div>
+
   <!-- Main App Wrapper -->
   <main id="app">
 

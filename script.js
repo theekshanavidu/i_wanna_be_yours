@@ -777,7 +777,84 @@ document.addEventListener('DOMContentLoaded', () => {
   initMusicPlayer();
   initLoveLetter();
   initNavigationButtons();
+  initMobileDeviceDetection();
 
   // Set initial history state to intro-screen
   history.replaceState({ screen: 'intro-screen' }, '', '#intro-screen');
 });
+
+// ==========================================================================
+// 14. MOBILE DEVICE DETECTION (Prompts Desktop, Laptop, or Tablet)
+// ==========================================================================
+function initMobileDeviceDetection() {
+  const notice = document.getElementById('mobile-device-notice');
+  const copyInput = document.getElementById('mobile-copy-url');
+  const copyBtn = document.getElementById('btn-mobile-copy');
+  const continueBtn = document.getElementById('btn-mobile-continue');
+  const toast = document.getElementById('copy-toast');
+
+  if (!notice) return;
+
+  if (copyInput) {
+    copyInput.value = window.location.href;
+  }
+
+  function checkDevice() {
+    const ua = navigator.userAgent || '';
+    // Tablets (iPad, Android tablet, etc.) or larger screens (>= 768px) ARE ALLOWED!
+    const isTablet = /(iPad|Tablet|(Android(?!.*Mobile))|PlayBook)/i.test(ua) || 
+                     (navigator.maxTouchPoints > 1 && window.innerWidth >= 768);
+
+    if (isTablet) {
+      notice.style.display = 'none';
+      return;
+    }
+
+    // Only detect mobile phones
+    const isMobileUA = /Android.*Mobile|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+    const isSmallPhone = window.innerWidth < 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+    if (isMobileUA || isSmallPhone) {
+      notice.style.display = 'flex';
+    } else {
+      notice.style.display = 'none';
+    }
+  }
+
+  // Copy button handler
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const urlToCopy = window.location.href;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(urlToCopy);
+        } else if (copyInput) {
+          copyInput.select();
+          document.execCommand('copy');
+        }
+        if (toast) {
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+        const textSpan = document.getElementById('copy-text');
+        if (textSpan) {
+          textSpan.textContent = 'Copied! ✨';
+          setTimeout(() => (textSpan.textContent = 'Copy Link'), 2500);
+        }
+      } catch (err) {
+        console.warn('Copy failed:', err);
+      }
+    });
+  }
+
+  // Continue on mobile anyway button
+  if (continueBtn) {
+    continueBtn.addEventListener('click', () => {
+      notice.style.display = 'none';
+    });
+  }
+
+  // Check on load and on window resize
+  checkDevice();
+  window.addEventListener('resize', checkDevice);
+}

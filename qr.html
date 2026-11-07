@@ -179,33 +179,32 @@
 
     .heart-qr-frame {
       position: relative;
-      width: 220px;
-      height: 220px;
-      margin: 0 auto 20px;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .heart-qr-frame svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 2;
     }
 
     .qr-holder {
-      width: 180px;
-      height: 180px;
-      border-radius: 16px;
-      overflow: hidden;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1;
+    }
+
+    .heart-qr-canvas {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 10px 24px rgba(255, 77, 109, 0.28));
+      transition: transform 0.3s ease;
+    }
+
+    .heart-qr-canvas:hover {
+      transform: scale(1.03);
     }
 
     .card-preview-quote {
@@ -302,12 +301,6 @@
         <p id="card-sub-text" class="card-preview-sub">Scan with your camera to open my heart</p>
 
         <div class="heart-qr-frame">
-          <svg viewBox="0 0 220 220">
-            <path d="M110,40 C85,-10 15,15 20,80 C25,135 110,190 110,205 C110,190 195,135 200,80 C205,15 135,-10 110,40 Z" fill="none" stroke="#ff758f" stroke-width="6"/>
-            <!-- Cute cat ears -->
-            <polygon points="45,40 58,15 75,35" fill="#ffe3cf" stroke="#ff758f" stroke-width="3"/>
-            <polygon points="145,35 162,15 175,40" fill="#ffe3cf" stroke="#ff758f" stroke-width="3"/>
-          </svg>
           <div id="qr-preview-holder" class="qr-holder"></div>
         </div>
 
@@ -320,6 +313,7 @@
 
   <script src="config.js"></script>
   <script src="assets/qrcode.min.js"></script>
+  <script src="assets/heart-qr.js"></script>
   <script>
     const urlInput = document.getElementById('input-url');
     const titleInput = document.getElementById('input-title');
@@ -338,13 +332,18 @@
     function renderQr() {
       const url = urlInput.value.trim() || defaultUrl;
       qrHolder.innerHTML = '';
-      new QRCode(qrHolder, {
-        text: url,
-        width: 170,
-        height: 170,
-        colorDark: "#ff4d6d",
-        colorLight: "#ffffff"
+      
+      // Render true Heart-Shaped QR Canvas (Camouflaged seamlessly)
+      const heartCv = createHeartQRCanvas(url, 250, {
+        colorDark: "#c9184a",
+        colorLight: "#ffffff",
+        strokeColor: "#ff758f"
       });
+
+      if (heartCv) {
+        heartCv.className = 'heart-qr-canvas';
+        qrHolder.appendChild(heartCv);
+      }
 
       cardTitle.textContent = titleInput.value;
       cardSub.textContent = subInput.value;
@@ -365,57 +364,45 @@
     // Initial render
     renderQr();
 
-    // Download PNG Card
+    // Download High-Resolution Printable PNG Card
     document.getElementById('btn-download-card').addEventListener('click', () => {
       const cardCanvas = document.createElement('canvas');
       cardCanvas.width = 600;
-      cardCanvas.height = 780;
+      cardCanvas.height = 800;
       const ctx = cardCanvas.getContext('2d');
 
       // Gradient background
-      const grad = ctx.createLinearGradient(0, 0, 0, 780);
+      const grad = ctx.createLinearGradient(0, 0, 0, 800);
       grad.addColorStop(0, '#fff5f7');
       grad.addColorStop(1, '#ffe3eb');
       ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, 600, 780);
+      ctx.fillRect(0, 0, 600, 800);
 
       // Border
       ctx.strokeStyle = '#ffccd5';
       ctx.lineWidth = 10;
-      ctx.strokeRect(20, 20, 560, 740);
+      ctx.strokeRect(20, 20, 560, 760);
 
       // Title & Subtitle
       ctx.fillStyle = '#c9184a';
-      ctx.font = 'bold 34px "Quicksand", sans-serif';
+      ctx.font = 'bold 32px "Quicksand", sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(titleInput.value, 300, 85);
+      ctx.fillText(titleInput.value, 300, 105);
 
       ctx.fillStyle = '#8d7b78';
-      ctx.font = '600 19px "Quicksand", sans-serif';
-      ctx.fillText(subInput.value, 300, 125);
+      ctx.font = '600 18px "Quicksand", sans-serif';
+      ctx.fillText(subInput.value, 300, 145);
 
-      // Heart outline
-      ctx.save();
-      ctx.translate(300, 360);
-      ctx.beginPath();
-      ctx.moveTo(0, -90);
-      ctx.bezierCurveTo(80, -170, 210, -90, 210, 40);
-      ctx.bezierCurveTo(210, 150, 90, 220, 0, 280);
-      ctx.bezierCurveTo(-90, 220, -210, 150, -210, 40);
-      ctx.bezierCurveTo(-210, -90, -80, -170, 0, -90);
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = 'rgba(255, 77, 109, 0.3)';
-      ctx.shadowBlur = 25;
-      ctx.fill();
-      ctx.strokeStyle = '#ff758f';
-      ctx.lineWidth = 6;
-      ctx.stroke();
-      ctx.restore();
+      // Render crisp high-res Heart QR directly on download card
+      const url = urlInput.value.trim() || defaultUrl;
+      const highResHeartCv = createHeartQRCanvas(url, 420, {
+        colorDark: "#c9184a",
+        colorLight: "#ffffff",
+        strokeColor: "#ff758f"
+      });
 
-      // Draw QR Canvas
-      const qrCv = qrHolder.querySelector('canvas');
-      if (qrCv) {
-        ctx.drawImage(qrCv, 185, 275, 230, 230);
+      if (highResHeartCv) {
+        ctx.drawImage(highResHeartCv, 90, 195, 420, 420);
       }
 
       // Romantic quote
@@ -426,7 +413,7 @@
       if (pinInput.value.trim()) {
         ctx.fillStyle = '#ff4d6d';
         ctx.font = 'bold 18px "Quicksand", sans-serif';
-        ctx.fillText(pinInput.value, 300, 720);
+        ctx.fillText(pinInput.value, 300, 725);
       }
 
       const link = document.createElement('a');
