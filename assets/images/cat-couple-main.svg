@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff5f7"/>
+      <stop offset="100%" stop-color="#ffe3ec"/>
+    </linearGradient>
+    <linearGradient id="peachFur" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff9f5"/>
+      <stop offset="100%" stop-color="#ffe9dc"/>
+    </linearGradient>
+    <linearGradient id="whiteFur" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff0f5"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#f8bbd0" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Hearts Floating -->
+  <g class="floating-hearts">
+    <path d="M200,45 C190,25 160,25 160,50 C160,75 200,95 200,105 C200,95 240,75 240,50 C240,25 210,25 200,45 Z" fill="#ff708f" opacity="0.9">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M140,80 C133,65 110,65 110,82 C110,100 140,115 140,122 C140,115 170,100 170,82 C170,65 147,65 140,80 Z" fill="#ffb3c6" opacity="0.75" transform="scale(0.6) translate(40, -10)">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="2.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M270,75 C263,60 240,60 240,77 C240,95 270,110 270,117 C270,110 300,95 300,77 C300,60 277,60 270,75 Z" fill="#ffb3c6" opacity="0.75" transform="scale(0.65) translate(140, -10)">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="2.1s" repeatCount="indefinite"/>
+    </path>
+    <!-- Little Sparkles -->
+    <path d="M100,120 L104,128 L112,132 L104,136 L100,144 L96,136 L88,132 L96,128 Z" fill="#ffd166" opacity="0.8"/>
+    <path d="M305,110 L308,116 L314,119 L308,122 L305,128 L302,122 L296,119 L302,116 Z" fill="#ffd166" opacity="0.8"/>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="200" cy="275" rx="145" ry="22" fill="#f8bbd0" opacity="0.45"/>
+
+  <!-- BOY CAT (Left - Peach/Cream) -->
+  <g id="boy-cat" filter="url(#softShadow)">
+    <!-- Tail -->
+    <path d="M95,240 C60,250 45,210 65,185 C75,172 90,180 85,195 C80,210 95,225 115,230" fill="none" stroke="#ffe3cf" stroke-width="16" stroke-linecap="round"/>
+    <!-- Body -->
+    <ellipse cx="150" cy="225" rx="58" ry="50" fill="url(#peachFur)"/>
+    <!-- Head -->
+    <circle cx="145" cy="165" r="48" fill="url(#peachFur)"/>
+    <!-- Ears -->
+    <polygon points="110,135 125,92 148,125" fill="#ffe3cf"/>
+    <polygon points="117,130 127,102 142,123" fill="#ffb3ba"/>
+    <polygon points="160,126 182,95 192,138" fill="#ffe3cf"/>
+    <polygon points="165,124 180,105 187,133" fill="#ffb3ba"/>
+    <!-- Boy Forehead Peach Patch -->
+    <ellipse cx="145" cy="130" rx="18" ry="10" fill="#fcd2b5" opacity="0.6"/>
+    <!-- Eyes (Happy Closed Arch) -->
+    <path d="M125,160 Q133,152 141,160" fill="none" stroke="#4a3e3d" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M153,160 Q161,152 169,160" fill="none" stroke="#4a3e3d" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Cute Pink Cheeks -->
+    <ellipse cx="120" cy="172" rx="9" ry="5.5" fill="#ff9aa2" opacity="0.65"/>
+    <ellipse cx="172" cy="172" rx="9" ry="5.5" fill="#ff9aa2" opacity="0.65"/>
+    <!-- Nose & Mouth -->
+    <polygon points="144,166 148,166 146,169" fill="#ff8099"/>
+    <path d="M142,170 Q146,174 150,170" fill="none" stroke="#4a3e3d" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Whiskers -->
+    <line x1="105" y1="165" x2="117" y2="167" stroke="#b09b95" stroke-width="2" stroke-linecap="round"/>
+    <line x1="104" y1="173" x2="116" y2="172" stroke="#b09b95" stroke-width="2" stroke-linecap="round"/>
+    <line x1="175" y1="167" x2="187" y2="165" stroke="#b09b95" stroke-width="2" stroke-linecap="round"/>
+    <line x1="176" y1="172" x2="188" y2="173" stroke="#b09b95" stroke-width="2" stroke-linecap="round"/>
+    <!-- Blue/Teal Bowtie -->
+    <g transform="translate(146, 206)">
+      <polygon points="-12,-7 0,0 -12,7" fill="#70c1b3"/>
+      <polygon points="12,-7 0,0 12,7" fill="#70c1b3"/>
+      <circle cx="0" cy="0" r="4" fill="#247ba0"/>
+    </g>
+    <!-- Left Paw hugging girl -->
+    <ellipse cx="185" cy="225" rx="14" ry="10" fill="#fff9f5" stroke="#ffe3cf" stroke-width="2" transform="rotate(-15, 185, 225)"/>
+  </g>
+
+  <!-- GIRL CAT (Right - Pure White & Pink Ribbon) -->
+  <g id="girl-cat" filter="url(#softShadow)">
+    <!-- Tail (Forms half heart with boy's) -->
+    <path d="M305,240 C340,250 355,210 335,185 C325,172 310,180 315,195 C320,210 305,225 285,230" fill="none" stroke="#fff0f5" stroke-width="16" stroke-linecap="round"/>
+    <!-- Body -->
+    <ellipse cx="250" cy="225" rx="56" ry="50" fill="url(#whiteFur)"/>
+    <!-- Head -->
+    <circle cx="248" cy="165" r="47" fill="url(#whiteFur)"/>
+    <!-- Ears -->
+    <polygon points="212,136 220,95 244,126" fill="#fff0f5"/>
+    <polygon points="218,133 224,105 240,124" fill="#ffb3ba"/>
+    <polygon points="258,125 280,92 292,135" fill="#fff0f5"/>
+    <polygon points="263,123 277,102 286,130" fill="#ffb3ba"/>
+    <!-- Eyes (Adorably Closed with Lashes) -->
+    <path d="M228,160 Q236,152 244,160" fill="none" stroke="#4a3e3d" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M242,156 L246,152" stroke="#4a3e3d" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M256,160 Q264,152 272,160" fill="none" stroke="#4a3e3d" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M270,156 L274,152" stroke="#4a3e3d" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Cute Pink Cheeks -->
+    <ellipse cx="224" cy="172" rx="9" ry="5.5" fill="#ff85a1" opacity="0.75"/>
+    <ellipse cx="276" cy="172" rx="9" ry="5.5" fill="#ff85a1" opacity="0.75"/>
+    <!-- Nose & Shy Smile -->
+    <polygon points="247,166 251,166 249,169" fill="#ff6b8b"/>
+    <path d="M245,170 Q249,174 253,170" fill="none" stroke="#4a3e3d" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Whiskers -->
+    <line x1="210" y1="165" x2="222" y2="167" stroke="#d5b8c0" stroke-width="2" stroke-linecap="round"/>
+    <line x1="209" y1="173" x2="221" y2="172" stroke="#d5b8c0" stroke-width="2" stroke-linecap="round"/>
+    <line x1="278" y1="167" x2="290" y2="165" stroke="#d5b8c0" stroke-width="2" stroke-linecap="round"/>
+    <line x1="279" y1="172" x2="291" y2="173" stroke="#d5b8c0" stroke-width="2" stroke-linecap="round"/>
+    <!-- Cute Ribbon on Ear -->
+    <g transform="translate(278, 115) rotate(20)">
+      <path d="M-12,-8 C-4,-4 0,0 -8,8 C-14,4 -16,-4 -12,-8 Z" fill="#ff6584"/>
+      <path d="M12,-8 C4,-4 0,0 8,8 C14,4 16,-4 12,-8 Z" fill="#ff6584"/>
+      <circle cx="0" cy="0" r="5" fill="#ff4365"/>
+      <path d="M-2,4 L-6,16" stroke="#ff4365" stroke-width="3" stroke-linecap="round"/>
+      <path d="M2,4 L6,16" stroke="#ff4365" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- Girl Paw resting on Boy's chest -->
+    <ellipse cx="212" cy="226" rx="13" ry="9" fill="#ffffff" stroke="#ffccd5" stroke-width="2" transform="rotate(20, 212, 226)"/>
+  </g>
+
+  <!-- Central Little Heart between them -->
+  <path d="M200,195 C195,185 180,185 180,198 C180,210 200,220 200,225 C200,220 220,210 220,198 C220,185 205,185 200,195 Z" fill="#ff4d6d">
+    <animate attributeName="transform" type="scale" values="1; 1.15; 1" dur="1.2s" repeatCount="indefinite" transform-origin="200 205"/>
+  </path>
+</svg>
+

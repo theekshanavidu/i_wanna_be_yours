@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Surprise For My Princess 🐾💖</title>
+  
+  <!-- Romantic & Cute Google Fonts (including Sinhala script support) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Gemunu+Libre:wght@500;600;700;800&family=Noto+Serif+Sinhala:wght@500;600;700;800&family=Nunito:wght@600;700;800;900&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Floating Hearts Canvas -->
+  <canvas id="hearts-canvas"></canvas>
+
+  <!-- Ambient Falling Petals Canvas (for Box 1 Flower Screen) -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Main App Wrapper -->
+  <main id="app">
+
+    <!-- ====================================================================
+         SCREEN 0: INTRO SCREEN ("Surprise! Click To Enter")
+         Appears immediately when opening the website
+         ==================================================================== -->
+    <section id="intro-screen" class="screen active">
+      <div class="intro-welcome-card">
+        <div class="intro-cats-art">
+          <img src="assets/images/cat-couple-main.svg" alt="Cute Cat Couple">
+        </div>
+
+        <div class="intro-badge">
+          <span>🐾</span> Especially For You <span>💖</span>
+        </div>
+
+        <h1 class="intro-title">A Surprise For My Princess! ✨</h1>
+        <p class="intro-subtitle">A little world of love, sweetness, and magic made just for you</p>
+
+        <!-- Big Glowing Pulsating Button -->
+        <button id="btn-enter-site" class="enter-surprise-btn" data-nav="lock-screen">
+          <span class="btn-sparkle-icon">🎁</span>
+          <span>Surprise! Click To Enter</span>
+          <span class="btn-sparkle-icon">✨</span>
+        </button>
+
+        <p class="intro-tap-hint">Tap to unlock your secret gifts 🐾</p>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 1: SECRET PASSCODE LOCK SCREEN (Split Layout)
+         Left: 3 Cute Cat Photos Auto-Changing | Right: Password Pad
+         ==================================================================== -->
+    <section id="lock-screen" class="screen">
+      <div class="lock-split-card">
+        
+        <!-- LEFT: 3 Cute Cat Couple Photos Stack / Gallery (Auto-changing) -->
+        <div class="lock-cats-column">
+          <div class="cats-gallery-badge">
+            <span>🐾</span> Our Sweet Story <span>💖</span>
+          </div>
+
+          <div class="cats-polaroids-container" id="cats-polaroid-gallery">
+            <!-- Photo 1: Sunset Window Cuddle -->
+            <div class="cat-polaroid polaroid-1 active" data-index="0">
+              <div class="tape-washi"></div>
+              <div class="polaroid-photo-frame">
+                <img src="assets/images/cat-couple-1.jpg" alt="Cats snuggling by window at sunset">
+              </div>
+              <div class="polaroid-text">Forever Snuggled 🐾</div>
+            </div>
+
+            <!-- Photo 2: Cozy Bed Cuddle with Bowties -->
+            <div class="cat-polaroid polaroid-2" data-index="1">
+              <div class="tape-washi"></div>
+              <div class="polaroid-photo-frame">
+                <img src="assets/images/cat-couple-2.jpg" alt="Cats on bed with bowties">
+              </div>
+              <div class="polaroid-text">My Favorite Place 💕</div>
+            </div>
+
+            <!-- Photo 3: Pink Warm Hearts Glow -->
+            <div class="cat-polaroid polaroid-3" data-index="2">
+              <div class="tape-washi"></div>
+              <div class="polaroid-photo-frame">
+                <img src="assets/images/cat-couple-3.jpg" alt="Cats glowing under pink light">
+              </div>
+              <div class="polaroid-text">You & Me Always ❤️</div>
+            </div>
+          </div>
+
+          <!-- Photo Dots to switch/view photos -->
+          <div class="polaroid-dots">
+            <button class="p-dot active" data-slide="0" aria-label="Photo 1"></button>
+            <button class="p-dot" data-slide="1" aria-label="Photo 2"></button>
+            <button class="p-dot" data-slide="2" aria-label="Photo 3"></button>
+          </div>
+        </div>
+
+        <!-- RIGHT: Password Pad -->
+        <div class="lock-pad-column">
+          <div class="pad-brand-header">
+            <h2 class="lock-title">
+              <span>Enter Secret Passcode</span>
+              <span>🐾</span>
+            </h2>
+            <p class="lock-subtitle">Enter our 4-digit secret date to unlock your gifts</p>
+          </div>
+
+          <!-- 4 Heart PIN Slots -->
+          <div id="pin-display" class="pin-display">
+            <div class="pin-dot">♡</div>
+            <div class="pin-dot">♡</div>
+            <div class="pin-dot">♡</div>
+            <div class="pin-dot">♡</div>
+          </div>
+
+          <!-- Keypad Grid -->
+          <div id="lock-keypad" class="keypad">
+            <button class="key-btn" data-key="1">1<span class="key-subtext">🐾</span></button>
+            <button class="key-btn" data-key="2">2<span class="key-subtext">ABC</span></button>
+            <button class="key-btn" data-key="3">3<span class="key-subtext">DEF</span></button>
+
+            <button class="key-btn" data-key="4">4<span class="key-subtext">GHI</span></button>
+            <button class="key-btn" data-key="5">5<span class="key-subtext">JKL</span></button>
+            <button class="key-btn" data-key="6">6<span class="key-subtext">MNO</span></button>
+
+            <button class="key-btn" data-key="7">7<span class="key-subtext">PQRS</span></button>
+            <button class="key-btn" data-key="8">8<span class="key-subtext">TUV</span></button>
+            <button class="key-btn" data-key="9">9<span class="key-subtext">WXYZ</span></button>
+
+            <button class="key-btn action-btn" data-key="clear">Clear</button>
+            <button class="key-btn" data-key="0">0<span class="key-subtext">♥</span></button>
+            <button class="key-btn action-btn" data-key="backspace">⌫</button>
+          </div>
+
+          <div id="hint-container" class="hint-container"></div>
+          <button id="btn-passcode-hint" class="hint-btn">Need a hint, sweetie?</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 2: SURPRISE GIFT BOXES MENU SCREEN
+         Boxes keep the secret! No spoilers - Only "Open 🎀"
+         ==================================================================== -->
+    <section id="menu-screen" class="screen">
+      <!-- Screen Navigation Row -->
+      <div class="screen-nav-bar">
+        <button class="nav-direction-btn prev-btn" data-nav="lock-screen">
+          <span>🔒</span> Lock Screen
+        </button>
+      </div>
+
+      <div class="menu-header">
+        <h2 class="menu-title">Surprise for You, My Princess! ✨</h2>
+        <p class="menu-subtitle">I've prepared 3 mystery gifts for you. Tap each box to reveal its secret! 🐾</p>
+      </div>
+
+      <div class="gift-boxes-grid">
+        <!-- Gift Box 1: Mysterious Box -->
+        <div class="gift-card" data-screen="flower-screen">
+          <span class="gift-badge">Box 1</span>
+          <div class="gift-icon-container">
+            <img src="assets/images/giftbox.svg" alt="Mystery Gift Box 1">
+          </div>
+          <h3 class="gift-card-title">Surprise Gift 1 🎁</h3>
+          <p class="gift-card-desc">A special surprise prepared with all my love ✨</p>
+          <button class="gift-card-btn">Open 🎀</button>
+        </div>
+
+        <!-- Gift Box 2: Mysterious Box -->
+        <div class="gift-card" data-screen="music-screen">
+          <span class="gift-badge">Box 2</span>
+          <div class="gift-icon-container">
+            <img src="assets/images/giftbox.svg" alt="Mystery Gift Box 2">
+          </div>
+          <h3 class="gift-card-title">Surprise Gift 2 🎁</h3>
+          <p class="gift-card-desc">A special surprise prepared with all my love ✨</p>
+          <button class="gift-card-btn">Open 🎀</button>
+        </div>
+
+        <!-- Gift Box 3: Mysterious Box -->
+        <div class="gift-card" data-screen="letter-screen">
+          <span class="gift-badge">Box 3</span>
+          <div class="gift-icon-container">
+            <img src="assets/images/giftbox.svg" alt="Mystery Gift Box 3">
+          </div>
+          <h3 class="gift-card-title">Surprise Gift 3 🎁</h3>
+          <p class="gift-card-desc">A special surprise prepared with all my love ✨</p>
+          <button class="gift-card-btn">Open 🎀</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 3: BOX 1 - INTERACTIVE FLOWER BOUQUET WITH SURROUNDING BOUQUETS
+         Plays "ආදරෙයි උතුරන්න" on loop ONLY while on this screen!
+         ==================================================================== -->
+    <section id="flower-screen" class="screen">
+      <!-- Screen Navigation Row -->
+      <div class="screen-nav-bar">
+        <button class="nav-direction-btn prev-btn" data-nav="menu-screen">
+          <span>←</span> Gifts Menu
+        </button>
+        <button class="nav-direction-btn next-btn" data-nav="music-screen">
+          Next Gift 🎁 <span>→</span>
+        </button>
+      </div>
+
+      <div class="content-box-card bouquet-stage-card">
+        
+        <!-- Big Flower Bouquets Surrounding the Screen -->
+        <img class="side-bouquet bouquet-left" src="assets/images/big-bouquet-left.svg" alt="Lush Blooming Flower Bouquet Left">
+        <img class="side-bouquet bouquet-right" src="assets/images/big-bouquet-right.svg" alt="Lush Blooming Flower Bouquet Right">
+
+        <div class="box-hero-header">
+          <h2 class="box-title">A Bouquet Just For You 💐</h2>
+          <p class="box-sub">Blooming with eternal love, melody, and warmth just for my princess 🐾</p>
+        </div>
+
+        <!-- Center Cute Cat Couple Bouquet Artwork -->
+        <div class="bouquet-showcase">
+          <img class="cat-bouquet-img" src="assets/images/cat-bouquet.svg" alt="Boy Cat giving Flowers to Girl Cat">
+        </div>
+
+        <!-- Grand Romantic Sinhala Poem Banner Card -->
+        <div id="grand-poem-card" class="grand-poem-scroll">
+          <div class="poem-ribbon-tag">
+            <span>🌸</span> මගේ හදවතින්ම ලියූ කවිය <span>💖</span>
+          </div>
+          
+          <div class="poem-verses-block">
+            <p class="poem-verse-line">"අවාරෙක මෙහි ඇවිත් මගේ හද කියවන්න"</p>
+            <p class="poem-verse-line">"ලියා යමි ගැඹුරු තැන 'ආදරෙයි උතුරන්න'"</p>
+            <p class="poem-verse-line">"හමා යන සුළඟකින් මගේ නම විමසන්න"</p>
+            <p class="poem-verse-line">"තබා ගිය පණිවුඩෙන් ආදරෙද පවසන්න"</p>
+          </div>
+        </div>
+
+        <!-- Interactive Shower Petals Button -->
+        <div class="bouquet-actions-center">
+          <button id="btn-shower-petals" class="shower-petals-btn">
+            <span>🌸</span> Shower More Flowers & Hearts <span>💖</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 4: BOX 2 - RETRO VINYL MUSIC PLAYER
+         Plays "Arash - Pure Love Feat. Helena" full song ONLY while on this screen!
+         ==================================================================== -->
+    <section id="music-screen" class="screen">
+      <!-- Screen Navigation Row -->
+      <div class="screen-nav-bar">
+        <button class="nav-direction-btn prev-btn" data-nav="flower-screen">
+          <span>←</span> Previous Gift
+        </button>
+        <button class="nav-direction-btn menu-btn" data-nav="menu-screen">
+          Gifts Menu 🎁
+        </button>
+        <button class="nav-direction-btn next-btn" data-nav="letter-screen">
+          Next Gift 💌 <span>→</span>
+        </button>
+      </div>
+
+      <div class="content-box-card player-container">
+        <div class="box-hero-header">
+          <h2 class="box-title">Our Romantic Melody 🎵</h2>
+          <p class="box-sub">Just like two cute cats vibing to our favorite song together</p>
+        </div>
+
+        <!-- Retro Turntable Unit -->
+        <div class="retro-turntable-card">
+          <div class="turntable-deck">
+            <!-- Vinyl Record -->
+            <div id="vinyl-record" class="vinyl-record spinning">
+              <div class="vinyl-center-label">
+                <img src="assets/images/cat-music.svg" alt="Cat Couple with Headphones">
+              </div>
+              <div class="vinyl-spindle-hole"></div>
+            </div>
+
+            <!-- Movable Tonearm Stylus -->
+            <div id="tonearm-assembly" class="tonearm-assembly playing">
+              <div class="tonearm-base"></div>
+              <div class="tonearm-stick">
+                <div class="tonearm-head"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Song Meta (Arash - Pure Love Feat. Helena) -->
+          <div id="player-track-title" class="track-title">Pure Love</div>
+          <div id="player-track-artist" class="track-artist">Arash Feat. Helena</div>
+
+          <!-- Progress Bar -->
+          <div class="progress-container">
+            <div id="music-progress-bar" class="progress-bar-bg">
+              <div id="music-progress-fill" class="progress-fill"></div>
+            </div>
+            <div class="time-row">
+              <span id="current-time">00:00</span>
+              <span id="duration-time">03:15</span>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="playback-controls">
+            <button id="btn-play-pause" class="ctrl-btn play-main" title="Play / Pause">
+              <span id="play-icon">⏸</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SCREEN 5: BOX 3 - THE LOVE LETTER
+         Plays "video_2026-11-08_01-37-40.mp3" on loop ONLY while reading!
+         ==================================================================== -->
+    <section id="letter-screen" class="screen">
+      <!-- Screen Navigation Row -->
+      <div class="screen-nav-bar">
+        <button class="nav-direction-btn prev-btn" data-nav="music-screen">
+          <span>←</span> Previous Gift
+        </button>
+        <button class="nav-direction-btn menu-btn" data-nav="menu-screen">
+          Gifts Menu 🎁
+        </button>
+      </div>
+
+      <div class="letter-screen-container">
+        <div class="envelope-wrapper">
+          <div class="letter-paper">
+            <!-- Decorative Washi Tapes -->
+            <div class="washi-tape-top-left"></div>
+            <div class="washi-tape-top-right"></div>
+
+            <div class="letter-cat-header">
+              <img src="assets/images/cat-letter.svg" alt="Cats Reading Letter Together">
+            </div>
+
+            <h2 id="letter-salutation" class="letter-salutation">To the prettiest girl in my world,</h2>
+
+            <div id="letter-body" class="letter-body">
+              <p>Thank you for bringing so much warmth, laughter, and sweetness into my life. Every time I see you smile, all my worries just fade away, and being around you feels like home.</p>
+              <p>Just like two cute cats curled up together, my absolute favorite place will always be right by your side. You are my princess, my peaceful escape, and the sweetest part of my everyday life.</p>
+              <p>I love you more than words can ever describe, today and forever.</p>
+            </div>
+
+            <div id="letter-closing" class="letter-closing">Forever & Always Yours,</div>
+            <div id="letter-signature" class="letter-signature">With All My Love ❤️🐾</div>
+
+            <!-- Wax Seal Badge -->
+            <div class="wax-seal-badge" title="Sealed with Love">
+              ♥
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-reaction-container">
+          <button id="btn-love-reaction" class="btn-love-reaction">
+            <span>💖</span> I Love You More! <span>🐾</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       CELEBRATION REACTION MODAL
+       ==================================================================== -->
+  <div id="celebration-modal-overlay" class="modal-overlay">
+    <div class="celebration-modal">
+      <div class="celebration-cats-img">
+        <img src="assets/images/cat-couple-main.svg" alt="Happy Cat Couple Hugging">
+      </div>
+      <h3 class="celebration-title">You Make Me The Happiest! 🐱❤️</h3>
+      <p class="celebration-msg">
+        Thank you for being my princess. I promise to love you, cherish you, and stay by your side forever and ever! 🐾✨
+      </p>
+      <button id="btn-close-celeb" class="close-note-btn">
+        Hugs & Kisses 💖
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

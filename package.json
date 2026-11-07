@@ -1,0 +1,17 @@
+{
+  "name": "romantic-surprise-website",
+  "version": "1.0.0",
+  "description": "Interactive romantic surprise gift website with cute cat couple theme",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "romantic",
+    "gift",
+    "cute-cats",
+    "surprise"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

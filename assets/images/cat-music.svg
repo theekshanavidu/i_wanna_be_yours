@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff758f"/>
+      <stop offset="100%" stop-color="#ff4d6d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Musical Notes Floating in air -->
+  <g fill="#ff758f">
+    <!-- Note 1 -->
+    <path d="M75,90 A6,6 0 1,0 80,95 L80,70 L95,66 L95,85 A6,6 0 1,0 100,90 L100,60 L75,65 Z" opacity="0.8">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="2.2s" repeatCount="indefinite"/>
+    </path>
+    <!-- Note 2 -->
+    <path d="M310,75 A6,6 0 1,0 315,80 L315,55 L335,50 L335,70 A6,6 0 1,0 340,75 L340,45 L310,50 Z" opacity="0.85">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+    <!-- Single Note -->
+    <path d="M190,45 A5,5 0 1,0 195,50 L195,30 L205,32 L205,38 L197,36 L197,50 Z" opacity="0.75">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="200" cy="275" rx="140" ry="20" fill="#f8bbd0" opacity="0.45"/>
+
+  <!-- CAT COUPLE CUDDLED UP WITH SHARED HEADPHONES -->
+  <!-- Boy Cat (Left) -->
+  <g id="boy-music">
+    <ellipse cx="160" cy="225" rx="52" ry="46" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <circle cx="155" cy="165" r="45" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <!-- Ears -->
+    <polygon points="120,135 132,95 155,125" fill="#ffe3cf"/>
+    <polygon points="127,130 135,105 150,123" fill="#ffb3ba"/>
+    <!-- Closed Eyes gently vibing to music -->
+    <path d="M135,160 Q142,154 150,160" fill="none" stroke="#4a3e3d" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="130" cy="170" rx="8" ry="5" fill="#ff9aa2" opacity="0.7"/>
+    <polygon points="152,165 156,165 154,168" fill="#ff8099"/>
+    <path d="M150,169 Q154,173 158,169" fill="none" stroke="#4a3e3d" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Girl Cat (Right) -->
+  <g id="girl-music">
+    <ellipse cx="240" cy="225" rx="52" ry="46" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <circle cx="242" cy="165" r="45" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <!-- Ears -->
+    <polygon points="248,125 272,95 282,135" fill="#fff0f5"/>
+    <polygon points="253,123 268,105 276,130" fill="#ffb3ba"/>
+    <!-- Closed Eyes smiling -->
+    <path d="M250,160 Q258,154 266,160" fill="none" stroke="#4a3e3d" stroke-width="3" stroke-linecap="round"/>
+    <path d="M264,156 L267,153" stroke="#4a3e3d" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="270" cy="170" rx="8" ry="5" fill="#ff758f" opacity="0.8"/>
+    <polygon points="245,165 249,165 247,168" fill="#ff6b8b"/>
+    <path d="M243,169 Q247,173 251,169" fill="none" stroke="#4a3e3d" stroke-width="2" stroke-linecap="round"/>
+    <!-- Ribbon -->
+    <g transform="translate(275, 105) rotate(20)">
+      <circle cx="0" cy="0" r="5" fill="#ff4d6d"/>
+      <path d="M-9,-5 C-3,-3 0,0 -5,5 Z" fill="#ff758f"/>
+      <path d="M9,-5 C3,-3 0,0 5,5 Z" fill="#ff758f"/>
+    </g>
+  </g>
+
+  <!-- SHARED PINK HEADPHONE BAND & EARCUPS -->
+  <g id="headphones">
+    <!-- Headphone Arch connecting both cats -->
+    <path d="M110,165 C110,75 290,75 290,165" fill="none" stroke="#ff4d6d" stroke-width="7" stroke-linecap="round"/>
+    <!-- Soft cushion top -->
+    <path d="M165,95 C185,88 215,88 235,95" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" opacity="0.9"/>
+    <!-- Left Earcup (Boy) -->
+    <rect x="100" y="145" width="16" height="38" rx="8" fill="url(#headphoneGrad)" stroke="#c9184a" stroke-width="2"/>
+    <circle cx="108" cy="164" r="5" fill="#ffffff" opacity="0.8"/>
+    <!-- Right Earcup (Girl) -->
+    <rect x="284" y="145" width="16" height="38" rx="8" fill="url(#headphoneGrad)" stroke="#c9184a" stroke-width="2"/>
+    <circle cx="292" cy="164" r="5" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- Paws holding together -->
+  <circle cx="198" cy="225" r="14" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+  <circle cx="204" cy="225" r="12" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+  <path d="M193,222 Q198,217 203,222" fill="none" stroke="#ff758f" stroke-width="2" stroke-linecap="round"/>
+</svg>
+

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="envelopeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff0f3"/>
+      <stop offset="100%" stop-color="#ffccd5"/>
+    </linearGradient>
+    <filter id="letterShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#f8bbd0" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Floating Heart Petals -->
+  <g fill="#ff758f" opacity="0.8">
+    <path d="M120,50 C115,40 100,40 100,52 C100,64 120,74 120,79 C120,74 140,64 140,52 C140,40 125,40 120,50 Z" transform="scale(0.7) translate(50, 0)">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M280,40 C275,30 260,30 260,42 C260,54 280,64 280,69 C280,64 300,54 300,42 C300,30 285,30 280,40 Z" transform="scale(0.8) translate(70, 0)">
+      <animate attributeName="transform" type="translate" values="0,0; 0,-6; 0,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="200" cy="275" rx="145" ry="20" fill="#f8bbd0" opacity="0.45"/>
+
+  <!-- CAT BOY (Left leaning over letter) -->
+  <g id="boy-letter">
+    <ellipse cx="140" cy="225" rx="50" ry="46" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <circle cx="140" cy="155" r="44" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <!-- Ears -->
+    <polygon points="105,125 116,85 139,115" fill="#ffe3cf"/>
+    <polygon points="112,120 120,95 134,113" fill="#ffb3ba"/>
+    <polygon points="152,115 174,88 184,125" fill="#ffe3cf"/>
+    <polygon points="156,113 170,98 178,122" fill="#ffb3ba"/>
+    <!-- Shy Blushing Eyes looking down at letter -->
+    <path d="M125,152 Q132,160 139,152" fill="none" stroke="#4a3e3d" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="118" cy="162" rx="8" ry="5" fill="#ff9aa2" opacity="0.75"/>
+    <polygon points="140,160 144,160 142,163" fill="#ff8099"/>
+    <path d="M138,164 Q142,168 146,164" fill="none" stroke="#4a3e3d" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- CAT GIRL (Right resting head on boy reading letter) -->
+  <g id="girl-letter">
+    <ellipse cx="260" cy="225" rx="50" ry="46" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <circle cx="258" cy="155" r="44" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <!-- Ears -->
+    <polygon points="228,118 248,88 260,125" fill="#fff0f5"/>
+    <polygon points="234,116 247,98 255,122" fill="#ffb3ba"/>
+    <polygon points="274,125 296,92 308,130" fill="#fff0f5"/>
+    <polygon points="278,123 293,103 301,127" fill="#ffb3ba"/>
+    <!-- Eyes curved in bliss looking down -->
+    <path d="M246,152 Q253,160 260,152" fill="none" stroke="#4a3e3d" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="270" cy="162" rx="8" ry="5" fill="#ff758f" opacity="0.8"/>
+    <polygon points="255,160 259,160 257,163" fill="#ff6b8b"/>
+    <path d="M253,164 Q257,168 261,164" fill="none" stroke="#4a3e3d" stroke-width="2" stroke-linecap="round"/>
+    <!-- Cute pink ribbon -->
+    <g transform="translate(295, 100) rotate(20)">
+      <circle cx="0" cy="0" r="4" fill="#ff4d6d"/>
+      <path d="M-8,-5 C-3,-3 0,0 -5,5 Z" fill="#ff758f"/>
+      <path d="M8,-5 C3,-3 0,0 5,5 Z" fill="#ff758f"/>
+    </g>
+  </g>
+
+  <!-- WAX SEALED ROMANTIC LETTER IN FRONT (Held by both paws) -->
+  <g id="love-envelope" transform="translate(200, 220)" filter="url(#letterShadow)">
+    <!-- Open Envelope Base -->
+    <rect x="-65" y="-30" width="130" height="75" rx="8" fill="url(#envelopeGrad)" stroke="#ff758f" stroke-width="2"/>
+    <!-- Letter Paper sliding out slightly -->
+    <rect x="-56" y="-55" width="112" height="60" rx="4" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.5"/>
+    <!-- Cute text lines on paper -->
+    <line x1="-42" y1="-43" x2="42" y2="-43" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-42" y1="-33" x2="30" y2="-33" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-42" y1="-23" x2="40" y2="-23" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-42" y1="-13" x2="-10" y2="-13" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Heart stamp on paper -->
+    <path d="M25,-15 C22,-18 17,-18 17,-14 C17,-10 25,-7 25,-5 C25,-7 33,-10 33,-14 C33,-18 28,-18 25,-15 Z" fill="#e11d48"/>
+
+    <!-- Envelope Flap V folds -->
+    <polygon points="-65,-30 0,15 65,-30" fill="none" stroke="#ff758f" stroke-width="2"/>
+    <!-- Wax Seal Badge -->
+    <circle cx="0" cy="15" r="14" fill="#e11d48"/>
+    <path d="M0,11 C-3,8 -7,8 -7,12 C-7,16 0,20 0,22 C0,20 7,16 7,12 C7,8 3,8 0,11 Z" fill="#ffffff"/>
+
+    <!-- Boy Paw Left holding envelope -->
+    <circle cx="-52" cy="10" r="11" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <!-- Girl Paw Right holding envelope -->
+    <circle cx="52" cy="10" r="11" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+  </g>
+</svg>
+

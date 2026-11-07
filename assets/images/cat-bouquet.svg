@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff477e"/>
+      <stop offset="100%" stop-color="#c1121f"/>
+    </linearGradient>
+    <linearGradient id="pinkRose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff85a1"/>
+      <stop offset="100%" stop-color="#f72585"/>
+    </linearGradient>
+    <linearGradient id="tulipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703"/>
+      <stop offset="100%" stop-color="#fb8500"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Floating Petals -->
+  <g opacity="0.85">
+    <ellipse cx="60" cy="80" rx="6" ry="12" fill="#ff758f" transform="rotate(35 60 80)"/>
+    <ellipse cx="330" cy="90" rx="8" ry="14" fill="#ff85a1" transform="rotate(-25 330 90)"/>
+    <ellipse cx="360" cy="180" rx="5" ry="10" fill="#ffa2b4" transform="rotate(45 360 180)"/>
+    <ellipse cx="80" cy="220" rx="7" ry="11" fill="#ffa2b4" transform="rotate(-15 80 220)"/>
+  </g>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="200" cy="280" rx="150" ry="20" fill="#f8bbd0" opacity="0.4"/>
+
+  <!-- BOY CAT (Standing Left holding bouquet with both paws) -->
+  <g id="boy-giver">
+    <!-- Tail Wagging -->
+    <path d="M70,240 C35,230 40,185 60,170 C70,162 82,175 75,185 C68,198 85,220 95,225" fill="none" stroke="#ffe3cf" stroke-width="14" stroke-linecap="round"/>
+    <!-- Body -->
+    <ellipse cx="130" cy="220" rx="48" ry="46" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <!-- Head -->
+    <circle cx="125" cy="150" r="42" fill="#fff9f5" stroke="#fed8c2" stroke-width="2"/>
+    <!-- Ears -->
+    <polygon points="95,125 105,85 128,112" fill="#ffe3cf"/>
+    <polygon points="101,120 108,94 122,110" fill="#ffb3ba"/>
+    <polygon points="140,112 160,86 170,125" fill="#ffe3cf"/>
+    <polygon points="144,110 157,96 165,120" fill="#ffb3ba"/>
+    <!-- Eyes (Proud, Loving Winking) -->
+    <path d="M106,146 Q114,138 122,146" fill="none" stroke="#4a3e3d" stroke-width="3" stroke-linecap="round"/>
+    <path d="M136,146 L144,146" stroke="#4a3e3d" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Cheeks -->
+    <ellipse cx="102" cy="156" rx="8" ry="5" fill="#ff9aa2" opacity="0.7"/>
+    <ellipse cx="148" cy="156" rx="8" ry="5" fill="#ff9aa2" opacity="0.7"/>
+    <!-- Smile -->
+    <polygon points="124,151 128,151 126,154" fill="#ff8099"/>
+    <path d="M121,154 Q126,160 131,154" fill="none" stroke="#4a3e3d" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Bow tie -->
+    <polygon points="120,185 126,190 120,195" fill="#4ea8de"/>
+    <polygon points="132,185 126,190 132,195" fill="#4ea8de"/>
+    <circle cx="126" cy="190" r="3" fill="#0077b6"/>
+  </g>
+
+  <!-- HUGE BEAUTIFUL FLOWER BOUQUET IN THE MIDDLE -->
+  <g id="flower-bouquet" transform="translate(195, 175)">
+    <!-- Bouquet Wrapping Paper -->
+    <polygon points="0,75 -35,-5 35,-5" fill="#fff1e6" stroke="#e7c8b5" stroke-width="2.5"/>
+    <polygon points="-28,-5 0,75 28,-5" fill="#ffe5d9"/>
+    <!-- Ribbon Bow on Bouquet -->
+    <path d="M-15,40 C-30,35 -30,55 -5,45 Z" fill="#ff4d6d"/>
+    <path d="M15,40 C30,35 30,55 5,45 Z" fill="#ff4d6d"/>
+    <circle cx="0" cy="42" r="5" fill="#c9184a"/>
+    <path d="M-3,45 L-8,68" stroke="#ff4d6d" stroke-width="3" stroke-linecap="round"/>
+    <path d="M3,45 L8,68" stroke="#ff4d6d" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Green Leaves -->
+    <ellipse cx="-35" cy="-20" rx="14" ry="7" fill="#52b788" transform="rotate(-30 -35 -20)"/>
+    <ellipse cx="35" cy="-20" rx="14" ry="7" fill="#52b788" transform="rotate(30 35 -20)"/>
+    <ellipse cx="0" cy="-45" rx="8" ry="16" fill="#74c69d"/>
+
+    <!-- Flowers -->
+    <!-- Red Rose Center -->
+    <g transform="translate(0, -25)">
+      <circle cx="0" cy="0" r="16" fill="url(#roseGrad)"/>
+      <path d="M-8,-4 C-4,-12 4,-12 8,-4 C12,4 4,10 0,6 C-4,10 -12,4 -8,-4 Z" fill="#9d0208"/>
+      <circle cx="0" cy="0" r="6" fill="#ff758f"/>
+    </g>
+    <!-- Pink Rose Left -->
+    <g transform="translate(-25, -18)">
+      <circle cx="0" cy="0" r="14" fill="url(#pinkRose)"/>
+      <circle cx="0" cy="0" r="5" fill="#ffccd5"/>
+    </g>
+    <!-- Pink Rose Right -->
+    <g transform="translate(25, -18)">
+      <circle cx="0" cy="0" r="14" fill="url(#pinkRose)"/>
+      <circle cx="0" cy="0" r="5" fill="#ffccd5"/>
+    </g>
+    <!-- Yellow Tulip Top -->
+    <g transform="translate(0, -52)">
+      <path d="M-12,8 C-14,-6 0,-14 0,-14 C0,-14 14,-6 12,8 C6,14 -6,14 -12,8 Z" fill="url(#tulipGrad)"/>
+      <ellipse cx="0" cy="0" rx="4" ry="8" fill="#ffd166"/>
+    </g>
+    <!-- Little Baby's Breath White Florals -->
+    <circle cx="-16" cy="-45" r="4.5" fill="#ffffff" stroke="#ffccd5"/>
+    <circle cx="16" cy="-45" r="4.5" fill="#ffffff" stroke="#ffccd5"/>
+    <circle cx="-35" cy="-3" r="4" fill="#ffffff" stroke="#ffccd5"/>
+    <circle cx="35" cy="-3" r="4" fill="#ffffff" stroke="#ffccd5"/>
+    <!-- Floating Sparkle on Bouquet -->
+    <path d="M-18,-60 L-15,-52 L-7,-49 L-15,-46 L-18,-38 L-21,-46 L-29,-49 L-21,-52 Z" fill="#ffd166"/>
+  </g>
+
+  <!-- GIRL CAT (Right - Surprised & Happy with Heart Eyes) -->
+  <g id="girl-receiver">
+    <!-- Tail -->
+    <path d="M330,240 C365,225 365,185 345,170 C335,162 322,175 328,185 C335,198 320,220 305,228" fill="none" stroke="#fff0f5" stroke-width="14" stroke-linecap="round"/>
+    <!-- Body -->
+    <ellipse cx="270" cy="220" rx="48" ry="46" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <!-- Head -->
+    <circle cx="272" cy="150" r="42" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <!-- Ears -->
+    <polygon points="242,112 250,75 272,105" fill="#fff0f5"/>
+    <polygon points="246,110 252,85 268,103" fill="#ffb3ba"/>
+    <polygon points="288,105 310,75 318,112" fill="#fff0f5"/>
+    <polygon points="292,103 308,85 314,110" fill="#ffb3ba"/>
+    <!-- Heart Eyes (Super in love!) -->
+    <path d="M255,145 C251,138 243,140 243,146 C243,153 255,158 255,160 C255,158 267,153 267,146 C267,140 259,138 255,145 Z" fill="#ff2a6d"/>
+    <path d="M285,145 C281,138 273,140 273,146 C273,153 285,158 285,160 C285,158 297,153 297,146 C297,140 289,138 285,145 Z" fill="#ff2a6d"/>
+    <!-- Blush -->
+    <ellipse cx="244" cy="158" rx="9" ry="6" fill="#ff758f" opacity="0.8"/>
+    <ellipse cx="296" cy="158" rx="9" ry="6" fill="#ff758f" opacity="0.8"/>
+    <!-- Cute open 'O' Mouth in surprise -->
+    <ellipse cx="270" cy="157" rx="4" ry="4" fill="#ff4d6d"/>
+    <!-- Pink Ribbon on Right Ear -->
+    <g transform="translate(305, 95) rotate(25)">
+      <path d="M-9,-6 C-3,-3 0,0 -6,6 C-11,3 -12,-3 -9,-6 Z" fill="#ff477e"/>
+      <path d="M9,-6 C3,-3 0,0 6,6 C11,3 12,-3 9,-6 Z" fill="#ff477e"/>
+      <circle cx="0" cy="0" r="4" fill="#ff0054"/>
+    </g>
+    <!-- Girl's paws held to cheeks in delight -->
+    <circle cx="238" cy="168" r="9" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+    <circle cx="302" cy="168" r="9" fill="#ffffff" stroke="#ffccd5" stroke-width="2"/>
+  </g>
+</svg>
+
