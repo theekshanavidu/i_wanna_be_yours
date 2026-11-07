@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff758f"/>
+      <stop offset="50%" stop-color="#ff4d6d"/>
+      <stop offset="100%" stop-color="#c9184a"/>
+    </linearGradient>
+  </defs>
+  <!-- Heart Shape -->
+  <path d="M32,15 C26,5 12,5 6,17 C0,29 10,41 32,57 C54,41 64,29 58,17 C52,5 38,5 32,15 Z" fill="url(#heartGrad)"/>
+  <!-- Top Left Heart Shine -->
+  <path d="M14,14 C18,10 24,11 26,14 C27,16 25,18 22,17 C17,16 15,18 14,21 C13,23 11,23 11,21 C11,18 12,15 14,14 Z" fill="#ffffff" opacity="0.8"/>
+  <!-- Little Golden Sparkle -->
+  <path d="M48,12 L50,16 L54,18 L50,20 L48,24 L46,20 L42,18 L46,16 Z" fill="#ffd166"/>
+</svg>
