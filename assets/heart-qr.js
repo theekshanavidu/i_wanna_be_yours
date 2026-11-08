@@ -211,3 +211,4 @@
   window.createHeartQRCanvas = createHeartQRCanvas;
 
 })(window);
+

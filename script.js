@@ -847,10 +847,26 @@ function initMobileDeviceDetection() {
     });
   }
 
-  // Continue on mobile anyway button
+  // Continue on mobile button
   if (continueBtn) {
-    continueBtn.addEventListener('click', () => {
-      notice.style.display = 'none';
+    continueBtn.addEventListener('click', (e) => {
+      // Create cute sparkle effect around tap
+      if (typeof createConfettiAt === 'function') {
+        createConfettiAt(e.clientX || window.innerWidth / 2, e.clientY || window.innerHeight / 2);
+      }
+
+      // Pre-heat audio context on mobile touch to satisfy mobile autoplay policies
+      if (State.audioContext && State.audioContext.state === 'suspended') {
+        State.audioContext.resume().catch(() => {});
+      }
+
+      // Smooth fade-out animation
+      notice.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      notice.style.opacity = '0';
+      notice.style.transform = 'scale(1.05)';
+      setTimeout(() => {
+        notice.style.display = 'none';
+      }, 350);
     });
   }
 
